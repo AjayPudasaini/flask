@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+
+
+
+
+
+
+{% block content %}
+
+
+
+    {% for data in data %}
+        <h6>{{ data.author }}</h6>
+        <h4 class="title">{{ data.title }}</h4>
+        <p>{{ data.content }}</p>
+    {% endfor %}
+
+
+    
+
+    <div>
+        <form action="{{ url_for('hello') }}" class="d-flex p-5" method="POST">
+            <!-- <div class="row m-2"> -->
+                <!-- <div class="col"> -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Enter Short URL </span>
+                        </div>
+                        <input type="text" class="form-control" name="shorturl" id="shorturl" aria-describedby="basic-addon3">
+                    </div>
+                <!-- </div> -->
+                
+                <!-- <div class="col" style="margin-bottom: 2%; text-align: center;"> -->
+                    <div class="col">
+                        <button class="btn btn-primary" type="Submmit" value="submit_longer_url" name="submmit" id="submit">Submit</button>
+                    </div>
+                <!-- </div> -->
+            <!-- </div> -->
+        </form>
+    
+    
+    </div>
+
+    <div>
+        <h1>input data</h1>
+        {{ input }}
+    </div>
+{% endblock content %}
+
+
